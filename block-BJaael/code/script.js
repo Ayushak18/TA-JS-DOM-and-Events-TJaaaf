@@ -22,8 +22,11 @@ for (let loop = 0; loop < 494; loop++) {
 }
 
 let boxColor = document.querySelectorAll(".box");
-boxColor.forEach((eachBox) => {
-  eachBox.addEventListener("mousemove", function () {
-    eachBox.style.backgroundColor = color();
-  });
-});
+function final(){
+    boxColor.forEach((eachBox) => {
+        eachBox.style.backgroundColor = color();
+        eachBox.innerText = Math.floor(Math.random() * 500);
+      });
+}
+
+section.addEventListener("mousemove",final);
