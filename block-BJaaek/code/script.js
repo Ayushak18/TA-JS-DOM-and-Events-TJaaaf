@@ -2,27 +2,19 @@ let firstBox = document.querySelector(".first");
 let secondBox = document.querySelector(".second");
 
 function clickFunction() {
-  let randomNumbers = Math.floor(Math.random() * 10);
-  let randomNumbersTwo = Math.floor(Math.random() * 10);
-  let randomNumbersThree = Math.floor(Math.random() * 10);
-  let randomNumbersFour = Math.floor(Math.random() * 10);
-  let randomNumbersFive = Math.floor(Math.random() * 10);
-  let randomNumbersSix = Math.floor(Math.random() * 10);
-
-  let randomColor = `#${randomNumbers}${randomNumbersTwo}${randomNumbersThree}${randomNumbersFour}${randomNumbersFive}${randomNumbersSix}`;
+  let randomNumberOne = Math.floor(Math.random() * 256);
+  let randomNumberTwo = Math.floor(Math.random() * 256);
+  let randomNumberThree = Math.floor(Math.random() * 256);
+  let randomColor = `rgb(${randomNumberOne}, ${randomNumberTwo}, ${randomNumberThree})`;
 
   firstBox.style.backgroundColor = `${randomColor}`;
 }
 
 function mouseOver() {
-  let randomNumbers = Math.floor(Math.random() * 10);
-  let randomNumbersTwo = Math.floor(Math.random() * 10);
-  let randomNumbersThree = Math.floor(Math.random() * 10);
-  let randomNumbersFour = Math.floor(Math.random() * 10);
-  let randomNumbersFive = Math.floor(Math.random() * 10);
-  let randomNumbersSix = Math.floor(Math.random() * 10);
-
-  let randomColor = `#${randomNumbers}${randomNumbersTwo}${randomNumbersThree}${randomNumbersFour}${randomNumbersFive}${randomNumbersSix}`;
+  let randomNumberOne = Math.floor(Math.random() * 256);
+  let randomNumberTwo = Math.floor(Math.random() * 256);
+  let randomNumberThree = Math.floor(Math.random() * 256);
+  let randomColor = `rgb(${randomNumberOne}, ${randomNumberTwo}, ${randomNumberThree})`;
 
   secondBox.style.backgroundColor = `${randomColor}`;
 }
