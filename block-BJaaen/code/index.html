@@ -4,8 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper and Scissors</title>
+
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Icons Pack -->
+    <script
+      src="https://kit.fontawesome.com/67427b16f1.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
+    <header>
+      <div>
+        <h1 class="text-center">Rock Paper Scissors</h1>
+      </div>
+    </header>
+    <main>
+      <section class="player-section user text-center">
+        <div class="player-info flex justify-center">
+          <p class="username">User -</p>
+          <p class="user-score">0</p>
+        </div>
+        <div class="user-cards">
+          <a href="#">
+            <i class="far fa-hand-rock fa-5x" data-sign="1" data-sign="1"></i>
+          </a>
+          <a href="#">
+            <i class="far fa-hand-paper fa-5x" data-sign="2"></i>
+          </a>
+          <a href="#">
+            <i class="far fa-hand-scissors fa-5x" data-sign="3"></i>
+          </a>
+        </div>
+      </section>
+      <section class="player-section pc text-center">
+        <div class="player-info flex justify-center">
+          <p class="username">PC -</p>
+          <p class="user-score">0</p>
+        </div>
+        <div class="pc-cards">
+          <a href="#">
+            <i class="far fa-hand-rock fa-5x" data-sign="1"></i>
+          </a>
+          <a href="#">
+            <i class="far fa-hand-paper fa-5x" data-sign="2"></i>
+          </a>
+          <a href="#">
+            <i class="far fa-hand-scissors fa-5x" data-sign="3"></i>
+          </a>
+        </div>
+      </section>
+    </main>
     <script src="./script.js"></script>
   </body>
 </html>
