@@ -91,3 +91,7 @@ input[type='text'] {
 .terms {
   display: inline-block;
 }
+
+.close-btn{
+  text-align: right;
+}
