@@ -35,3 +35,28 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* Custom styles */
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  display: block;
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+label {
+  font-size: 28px;
+}
