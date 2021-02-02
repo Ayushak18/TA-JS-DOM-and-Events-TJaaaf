@@ -59,4 +59,8 @@ form.addEventListener("submit", handleSubmit);
 close.addEventListener('click',function(){
     div.style.display = 'none';
     form.style.display = "flex";
+    div.innerText = "";
+    // let closeBtn = document.createElement('div');
+    // closeBtn.setAttribute('class','close-btn');
+    div.append(close);
 })
