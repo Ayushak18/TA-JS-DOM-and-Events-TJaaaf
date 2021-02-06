@@ -31,6 +31,13 @@ function ui() {
     let para = document.createElement("p");
     para.innerText = `${element.task}`;
 
+    // Persists the striked off tasks
+    if (element.strike) {
+      para.style.textDecoration = "line-through";
+      para.style.textDecorationThickness = "2px";
+      para.style.textDecorationColor ="red";
+    }
+
     let anchorOne = document.createElement("a");
     let anchorTwo = document.createElement("a");
 
@@ -48,7 +55,6 @@ function ui() {
   });
 }
 
-
 // Funtion to handle delete and strike-through
 function handleDeleteStrike(event) {
   let selectedComponent =
@@ -64,6 +70,8 @@ function handleDeleteStrike(event) {
     if (!data[selectedComponent].strike) {
       event.target.parentElement.nextSibling.style.textDecoration =
         "line-through";
+      event.target.parentElement.nextSibling.style.textDecorationThickness = '2px'; 
+      event.target.parentElement.nextSibling.style.textDecorationColor = 'red';   
       data[selectedComponent].strike = !data[selectedComponent].strike;
     } else {
       event.target.parentElement.nextSibling.style.textDecoration = "none";
