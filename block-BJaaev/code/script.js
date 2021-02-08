@@ -4,6 +4,15 @@ let input = document.querySelector("input");
 // List-Section
 let section = document.querySelector(".list-section");
 
+// Filter button
+let allTasks = document.querySelector('.all');
+let active = document.querySelector('.active');
+let completed = document.querySelector('.completed');
+let clear = document.querySelector('.clear');
+
+// Default value of active class
+let activeTag = 'all'; 
+
 // DataBase to hold to do list
 let data = [];
 
@@ -16,14 +25,14 @@ function handleInput(event) {
     event.target.value = "";
 
     // Stop the repeatition of task in UI
-    section.innerHTML = "";
     ui();
   }
 }
 
 // Function for List of UI
-function ui() {
-  data.forEach((element, index) => {
+function ui(eachList = data) {
+  section.innerHTML = "";
+  eachList.forEach((element, index) => {
     let div = document.createElement("div");
     div.classList = "component";
     div.setAttribute("data-number", index);
@@ -62,7 +71,6 @@ function handleDeleteStrike(event) {
   // handles the delete function of any component
   if (event.target.classList[1] === "fa-times") {
     delete data[selectedComponent];
-    section.innerText = "";
     ui();
   }
   // Handles the strike through
@@ -79,6 +87,60 @@ function handleDeleteStrike(event) {
     }
   }
 }
+
+
+allTasks.addEventListener('click',()=>{
+  ui();
+  addActiveClass('all');
+  activeTag = 'all'; 
+  addActiveClass();
+
+})
+
+// Adding eventlistener to Active tasks
+active.addEventListener('click',() =>{
+  let activeTasks = data.filter(element => !element.strike);
+  ui(activeTasks);
+  activeTag = 'active'; 
+  addActiveClass();
+});
+
+// Addding eventlistener to completed tasks
+completed.addEventListener('click',() =>{
+  let completedTasks = data.filter(element => element.strike);
+  ui(completedTasks);
+  activeTag = 'completed'; 
+  addActiveClass();
+})
+
+// Adding eventlistener to clear completed tasks
+clear.addEventListener('click',() => {
+  data = data.filter(element => !element.strike);
+  activeTag = 'all';
+  addActiveClass();
+  ui();
+});
+
+function addActiveClass(btn = activeTag){
+
+  allTasks.classList.remove('active-tag');
+  active.classList.remove('active-tag');
+  completed.classList.remove('active-tag');
+
+  if(btn === "all"){
+    allTasks.classList.add('active-tag');
+  }
+
+  if(btn === "active"){
+    active.classList.add('active-tag');
+  }
+
+  if(btn === "completed"){
+    completed.classList.add('active-tag');
+  }
+}
+
+addActiveClass(activeTag);
 
 // Event Listener for Tick to srike off text
 section.addEventListener("click", handleDeleteStrike);
