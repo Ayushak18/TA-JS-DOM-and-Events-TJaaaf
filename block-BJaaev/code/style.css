@@ -193,11 +193,11 @@ input:focus {
   color: rgb(192, 50, 50);
 }
 
-.filters{
-  margin-bottom:50px;
+.filters {
+  margin-top: 50px;
 }
 
-.filters button{
+button {
   padding: 10px 15px;
   border: none;
   background: rgb(221, 80, 80);
@@ -206,9 +206,16 @@ input:focus {
   font-size: 18px;
   margin: 0 5px;
   outline: none;
+  cursor: pointer;
 }
 
-#active{
+button:hover{
+  background: white;
+  border: 2px solid rgb(221, 80, 80);
+  color: rgb(221, 80, 80);
+}
+
+.active-tag {
   background: white;
   border: 2px solid rgb(221, 80, 80);
   color: rgb(221, 80, 80);
