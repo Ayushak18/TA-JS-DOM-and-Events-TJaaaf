@@ -14,7 +14,7 @@ let clear = document.querySelector('.clear');
 let activeTag = 'all'; 
 
 // DataBase to hold to do list
-let data = [];
+let data = localStorage.getItem('data') ? JSON.parse(localStorage.getItem('data')) : [];
 
 // Input handle function
 function handleInput(event) {
@@ -26,6 +26,8 @@ function handleInput(event) {
 
     // Stop the repeatition of task in UI
     ui();
+    
+    localStorage.setItem('data',JSON.stringify(data));
   }
 }
 
@@ -61,6 +63,8 @@ function ui(eachList = data) {
 
     div.append(anchorOne, para, anchorTwo);
     section.append(div);
+    localStorage.setItem('data',JSON.stringify(data));
+
   });
 }
 
@@ -72,6 +76,7 @@ function handleDeleteStrike(event) {
   if (event.target.classList[1] === "fa-times") {
     delete data[selectedComponent];
     ui();
+    localStorage.setItem('data',JSON.stringify(data));
   }
   // Handles the strike through
   if (event.target.classList[1] === "fa-check") {
@@ -91,6 +96,7 @@ function handleDeleteStrike(event) {
 
 allTasks.addEventListener('click',()=>{
   ui();
+  localStorage.setItem('data',JSON.stringify(data));
   addActiveClass('all');
   activeTag = 'all'; 
   addActiveClass();
@@ -119,6 +125,7 @@ clear.addEventListener('click',() => {
   activeTag = 'all';
   addActiveClass();
   ui();
+  localStorage.setItem('data',JSON.stringify(data));
 });
 
 function addActiveClass(btn = activeTag){
