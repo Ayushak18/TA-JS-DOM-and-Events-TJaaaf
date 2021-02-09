@@ -91,6 +91,7 @@ function handleDeleteStrike(event) {
       data[selectedComponent].strike = !data[selectedComponent].strike;
     }
   }
+  localStorage.setItem('data',JSON.stringify(data));
 }
 
 
@@ -154,3 +155,5 @@ section.addEventListener("click", handleDeleteStrike);
 
 // Event Listener on Input
 input.addEventListener("keyup", handleInput);
+
+ui();
